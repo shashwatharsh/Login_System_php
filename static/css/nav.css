@@ -1,5 +1,24 @@
 /* css for navbar of website  */
-.head {
-    font-size: large;
-    color: chartreuse;
+#navbar {
+    /* display: inline; */
+}
+.nav-container {
+    display: flex;
+}
+.nav-list {
+    display: flex;
+}
+.element {
+    /* display: flex; */
+    list-style: none;
+    margin: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border: 5px solid rgb(11, 22, 8) ;
+}
+.element a{
+    text-decoration: none;
+}
+.log {
+    margin-left: 100vh;
 }
