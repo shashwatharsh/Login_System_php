@@ -15,6 +15,7 @@
         <ul class="nav-list log">
             <li class="element"><a href="/programs/Php_Projects/Login_System/login.php">Login</a></li>
             <li class="element"><a href="/programs/Php_Projects/Login_System/signup.php">Sign up</a></li>
+            <li class="element"><a href="/programs/Php_Projects/Login_System/logout.php">Logout</a></li>
         </ul>
     </div>
 </nav>

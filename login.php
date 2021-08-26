@@ -9,5 +9,6 @@
 </head>
 <body>
     <?php require 'partials/nav.php' ?>
+    <h1>Hello world </h1>
 </body>
 </html>
