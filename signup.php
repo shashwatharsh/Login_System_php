@@ -8,9 +8,12 @@
 </head>
 <body>
 <?php require 'partials/nav.php' ?>
-    <h1>Signup Page</h1>
-    <p>you can sign up via this website. It is made by Shashwat harsh.</p>
-
-
+<div class="container" style=" margin: auto;width: 100%;text-align: center;">
+    <h1 style="justify-content:center;">Signup Page</h1>
+    <form action="">
+        <label for="uname">User name:</label>
+        <input type="text">
+    </form>
+    </div>
 </body>
 </html>
