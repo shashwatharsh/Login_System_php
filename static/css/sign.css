@@ -1,0 +1,14 @@
+/* CSS for signup.php file */
+
+.container {
+    text-align: center;
+    justify-content: center;
+    background-color: chartreuse;
+}
+.form-grp {
+    text-align: center;
+    justify-content: center;
+    background-color: chartreuse;
+    margin: auto;
+    padding: 10px;
+}
