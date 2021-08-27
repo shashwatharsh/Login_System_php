@@ -1,9 +1,31 @@
+body {
+    background-color: green;
+    margin: 0px;
+  }
 /* css for navbar of website  */
 #navbar {
     /* display: inline; */
+    padding: 0px;
+    margin: 0px;
+    
+}
+.site-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    --fleck-seed: 35458;
+    --fleck-count: 500;
+    --fleck-size-base: 1px;
+    --fleck-color-1: #262626;
+    background-color: #111;
+    background-image: paint(fleck);
+    border-bottom: 1px solid #676767;
 }
 .nav-container {
     display: flex;
+    background-color: cornflowerblue;
 }
 .nav-list {
     display: flex;

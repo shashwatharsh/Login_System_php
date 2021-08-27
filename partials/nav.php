@@ -3,7 +3,7 @@
     <?php require 'static/css/nav.css' ?>
 </style>
 
-<nav id='navbar'>
+<nav id='navbar' class="site-handler">
     <div class="nav-container"> 
         <ul class="nav-list">
             <li class="element"><a href="/programs/Php_Projects/Login_System">Home</a></li>
