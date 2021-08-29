@@ -11,7 +11,7 @@
 <?php require 'partials/nav.php' ?>
 <div class="container" style=" margin: auto;width: 100%;text-align: center;">
     <h1 style="justify-content:center;">Signup Page</h1>
-    <form action="" method="post">
+    <form action="" method="post" class="form-c">
         <div class="form-grp">
         <label for="uname">Name</label>
         <input type="text" name="uname" class="form-elem" id="in1">
@@ -27,6 +27,10 @@
         <div class="form-grp">
             <label for="cpassword">Conform Password</label>
             <input type="password" name="cpassword" id="in4" class="form-elem">
+        </div>
+        <div class="form-grp">
+            <!-- <label for="submitb">Submit</label> -->
+            <input type="submit" value="Submit" style="margin-right: 120px;">
         </div>
     </form>
     </div>

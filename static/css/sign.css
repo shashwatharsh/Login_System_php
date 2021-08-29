@@ -5,16 +5,24 @@
     justify-content: center;
     background-color: chartreuse;
 }
-.form-grp {
-    text-align: center;
-    justify-content: center;
-    background-color: chartreuse;
-    margin: auto;
-    padding: 10px;
+/* Taken from stack overflow */
+
+
+.form-c{
+    /* background-color: whitesmoke; */
+    list-style-type: none;
+    padding: 0;
+    border-radius: 3px;
 }
 
-/* Taken from stack overflow */
-form  { display: table;      }
-p     { display: table-row;  }
-label { display: table-cell; }
-input { display: table-cell; }
+.form-grp {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+    margin-right: 42%;
+}
+.form-grp label {
+    font-size:20px;
+    font-weight: 300;
+    margin-right: 20px;
+}
