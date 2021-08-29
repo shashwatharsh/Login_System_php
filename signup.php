@@ -1,5 +1,5 @@
 <?php
-
+include 'partials/_dbconnect.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
