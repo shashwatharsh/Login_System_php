@@ -1,5 +1,23 @@
 <?php
-include 'partials/_dbconnect.php'
+$showalert =false;
+$showerr = false;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    include 'partials/_dbconnect.php';
+    $uname = $_POST['uname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $exist = false;
+    if (($password==$cpassword)&&($exist ==false)) {
+        $sql = "INSERT INTO `users` ( `name`, `email`, `password`, `datetime`) VALUES ( '{$uname}', '$email', '$password', current_timestamp())";
+        $result = mysqli_query($conn,$sql);
+        if ($result) {
+            $showalert = true;
+        }else{
+            $showerr = true;
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,5 +55,19 @@ include 'partials/_dbconnect.php'
         </div>
     </form>
     </div>
+    <?php
+    if ($showalert==true) {
+        echo "<script>
+        alert('Success!');
+        console.log('Success');
+        </script>";
+    } 
+    if ($showerr==true) {
+        echo "<script>
+        alert('Error! Password does not match.');
+        console.log('Error, check your password.');
+        </script>";
+    } 
+     ?>
 </body>
 </html>
