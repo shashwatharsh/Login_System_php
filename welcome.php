@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['loggedin'])|| $_SESSION['loggedin']!=true){
+    header('location: Login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +15,8 @@
 </head>
 <body>
 <?php require 'partials/nav.php' ?>
-    <h1>Welcome</h1>
+<!-- Have to print my name here -->
+    <h1>Pranam <?php echo $_SESSION['name'] ?></h1>
     <p>hi there, shashwat here, I am shashwat harsh and i am hrer to share some insights about my projects and about some programming languages</p>
     
 </body>
