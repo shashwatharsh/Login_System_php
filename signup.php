@@ -8,7 +8,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
     $exist = false;
-    if (($password==$cpassword)&&($exist ==false)) {
+    $existsql = "SELECT * FROM `users` WHERE email='$email'";
+    $result = mysqli_query($conn,$existsql);
+    $noOfRow = mysqli_num_rows($result);
+    if ($noOfRow > 0) {
+        $exist = true;
+    }
+    else{
+        $exist = false;
+    if (($password==$cpassword)) {
         $sql = "INSERT INTO `users` ( `name`, `email`, `password`, `datetime`) VALUES ( '{$uname}', '$email', '$password', current_timestamp())";
         $result = mysqli_query($conn,$sql);
         if ($result) {
@@ -17,6 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $showerr = true;
         }
     }
+}
 }
 ?>
 <!DOCTYPE html>
@@ -66,6 +75,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<script>
         alert('Error! Password does not match.');
         console.log('Error, check your password.');
+        </script>";
+    } 
+    if ($exist==true) {
+        echo "<script>
+        alert('You are already registered with this email try different mail.');
+        console.log('Email already exists');
         </script>";
     } 
      ?>
