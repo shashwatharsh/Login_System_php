@@ -1,6 +1,7 @@
 <?php
 $showalert =false;
 $showerr = false;
+$exist = false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include 'partials/_dbconnect.php';
     $uname = $_POST['uname'];
@@ -17,7 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else{
         $exist = false;
     if (($password==$cpassword)) {
-        $sql = "INSERT INTO `users` ( `name`, `email`, `password`, `datetime`) VALUES ( '{$uname}', '$email', '$password', current_timestamp())";
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `users` ( `name`, `email`, `password`, `datetime`) VALUES ( '{$uname}', '$email', '$hash', current_timestamp())";
         $result = mysqli_query($conn,$sql);
         if ($result) {
             $showalert = true;
