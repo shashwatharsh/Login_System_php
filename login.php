@@ -6,18 +6,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-        $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$password'";
+        // $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$password'";
+        $sql = "SELECT * FROM users WHERE email ='$email'";
         $result = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($result);
         if ($num == 1) {
+            while($row=mysqli_fetch_assoc($result)){
+                if (password_verify($password,$row['password'])) {
+                    $login = true;
+                    session_start();
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['name'] = $name;
+                    header("location: welcome.php");
+                }
+                else{
+                    $showerr = true;
+                }
+            }
             // $sqln = "SELECT 'name' FROM users WHERE email='$email' AND  password = '$password'";
             // $name = mysqli_fetch_array($sqln);
-            $login = true;
-            session_start();
-            $_SESSION['loggedin'] = true;
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-            header("location: welcome.php");
+        
         }else{
             $showerr = true;
         }
